@@ -32,4 +32,14 @@ It automatically creates a Laravel app, then does all the jobs required for depl
 
 :fire: **Usage**
 * `heroku login`
-* `heroku-laravel-create <your-app-name> --region=eu --locale=tr_TR`
+* `heroku-laravel-create <your-app-name> --ui=vue --auth=yes --region=eu --locale=tr_TR`
+
+
+**Switches**
+
+| Switch | Description | Default
+| --- | --- | --- |
+| `region` | See from `heroku regions` | `us` |
+| `locale` | Your localization code | `en_US` |
+| `ui` | Laravel UI scaffolding framework (`none`, `bootstrap`, `vue`, `react`) | `vue` |
+| `auth` | Laravel UI auth scaffolding (`yes`, `no`) | `yes` |
