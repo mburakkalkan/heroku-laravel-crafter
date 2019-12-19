@@ -1,18 +1,12 @@
-# heroku-laravel-crafter
+# Heroku Laravel Crafter
 
-Automatically creates and deploys a Laravel app to Heroku with one line of command!
-
-Installation: `npm install -g heroku-laravel-crafter`
-
-Heroku Laravel Crafter is a simple command line tool for easy creation of a Laravel project and deployment on Heroku.
+**Heroku Laravel Crafter** is a simple command line tool for easy creation of a Laravel project and deployment on Heroku.
 
 It automatically creates a Laravel app, then does all the jobs required for deployment to Heroku.
 
-Usage: 
-`heroku login`
-`heroku-laravel-create <your-app-name> --region=eu --locale=tr_TR`
+---
 
-Features:
+:star: **Features**:
 - Always uses latest and fresh version of Laravel
 - Automatically creates the Heroku app with the name you provide
 - Adds free plan Heroku PostgreS and Heroku Redis addons
@@ -22,4 +16,20 @@ Features:
 - Patches the app/Http/Middleware/TrustProxies.php for Heroku
 - Automatically sets environment variables for Heroku
 
-Laravel Installer required to run: `composer global require laravel/installer`
+---
+
+:warning: **Requirements**
+* Latest version of Heroku CLI
+* The minimum version of PHP which the latest version of Laravel requires
+* Latest version of Laravel installer: `composer global require laravel/installer`
+
+---
+
+:gear: **Installation**
+* `npm install -g heroku-laravel-crafter`
+
+---
+
+:fire: **Usage**
+* `heroku login`
+* `heroku-laravel-create <your-app-name> --region=eu --locale=tr_TR`
