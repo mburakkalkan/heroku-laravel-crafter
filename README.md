@@ -21,7 +21,6 @@ It automatically creates a Laravel app, then does all the jobs required for depl
 :warning: **Requirements**
 * Latest version of Heroku CLI
 * The minimum version of PHP which the latest version of Laravel requires
-* Latest version of Laravel installer: `composer global require laravel/installer`
 
 ---
 
