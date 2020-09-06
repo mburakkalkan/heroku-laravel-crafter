@@ -58,18 +58,20 @@ shell.exec('git init');
 
 if (ui != 'none') {
     console.log('Adding Laravel UI with \''.brightCyan + ui.brightYellow +'\''.brightCyan + (auth == 'yes' ? ' and auth' : '').brightCyan + '...'.brightCyan);
-    shell.exec('composer require laravel/ui');
+    console.log('Adding Heroku ext-redis to dependencies...'.brightCyan);
+    shell.exec('composer require laravel/ui ext-redis --ignore-platform-reqs');
     shell.exec('php artisan ui ' + ui + (auth == 'yes' ? ' --auth' : ''));
+}
+else {
+    console.log('Adding Heroku ext-redis to dependencies...'.brightCyan);
+    shell.exec('composer require ext-redis --ignore-platform-reqs');
 }
 
 console.log('Installing npm packages...'.brightCyan);
 shell.exec('npm install');
 
 console.log('Compiling assets...'.brightCyan);
-shell.exec('npm run dev');
-
-console.log('Adding Heroku ext-redis to dependencies...'.brightCyan);
-shell.exec('composer require ext-redis --ignore-platform-reqs');
+shell.exec('npm run production');
 
 console.log('Patching app/Http/Middleware/TrustProxies.php for app to trust Heroku Load Balancers...'.brightCyan);
 replace.sync({
