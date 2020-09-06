@@ -50,8 +50,11 @@ To continue, press enter.`.brightYellow);
 readline.question();
 
 console.log('Creating Laravel app...'.brightCyan);
-shell.exec('composer create-project --prefer-dist laravel/laravel ' + appName);
+shell.exec(`composer create-project --prefer-dist laravel/laravel ${appName}`);
 shell.cd(appName);
+
+console.log('Initializing git...'.brightCyan);
+shell.exec('git init');
 
 if (ui != 'none') {
     console.log('Adding Laravel UI with \''.brightCyan + ui.brightYellow +'\''.brightCyan + (auth == 'yes' ? ' and auth' : '').brightCyan + '...'.brightCyan);
@@ -97,9 +100,6 @@ shell.exec('heroku buildpacks:add heroku/php');
 
 console.log('Setting Heroku environment variables...'.brightCyan);
 shell.exec(`heroku config:set APP_NAME=${appName} APP_ENV=heroku APP_DEBUG=true APP_LOG_LEVEL=debug APP_KEY=${process.env.APP_KEY} QUEUE_CONNECTION=redis SESSION_DRIVER=redis CACHE_DRIVER=redis DB_CONNECTION=pgsql LOG_CHANNEL=stderr APP_URL=https://${appName}.herokuapp.com`);
-
-console.log('Initializing git...'.brightCyan);
-shell.exec('git init');
 
 console.log('Commiting changes...'.brightCyan);
 shell.exec('git add .');
