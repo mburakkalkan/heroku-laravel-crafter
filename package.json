@@ -27,9 +27,9 @@
   "dependencies": {
     "colors": "^1.4.0",
     "dotenv": "^8.2.0",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.5",
     "readline-sync": "^1.4.10",
     "replace-in-file": "^4.3.1",
-    "shelljs": "^0.8.3"
+    "shelljs": "^0.8.4"
   }
 }
