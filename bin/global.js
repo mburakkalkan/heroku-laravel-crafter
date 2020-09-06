@@ -61,7 +61,7 @@ shell.exec('laravel new');
 
 if (ui != 'none') {
     console.log('Adding Laravel UI with \''.brightCyan + ui.brightYellow +'\''.brightCyan + (auth == 'yes' ? ' and auth' : '').brightCyan + '...'.brightCyan);
-    shell.exec('composer require laravel/ui --dev');
+    shell.exec('composer require laravel/ui');
     shell.exec('php artisan ui ' + ui + (auth == 'yes' ? ' --auth' : ''));
 }
 
