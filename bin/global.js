@@ -6,8 +6,17 @@ const readline = require('readline-sync');
 const replace = require('replace-in-file');
 const fs = require('fs');
 const argv = require('minimist')(process.argv.slice(2));
+const generateAppNameTrail = function(length) {
+    const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for ( var i = 0; i < length; i++ ) {
+       result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return result;
+};
 
-const appName = argv._[0];
+
+const appName = argv._[0] || ('laravel-project-'+generateAppNameTrail(8));
 
 const regions = ['us', 'eu'];
 const region = argv.region || regions[0];
@@ -35,7 +44,7 @@ if (!auths.includes(auth)) {
     process.exit(1);
 }
 
-const laravelVersion = argv.version || "";
+const laravelVersion = argv.version || '';
 
 const locale = argv.locale || 'en_US';
 
@@ -126,9 +135,9 @@ console.log(`
 * Your app is READY on Heroku!               *
 *                                            *
 * NOTE: It may take a few minutes the Heroku *
-* Redis to be ready. If you get errors when  *
-* open your app, don't worry and try again   *
-* a few minutes later.                       *
+* Redis to be ready. If you get errors about *
+* Redis when open your app, don't worry and  *
+* refresh your page a few minutes later.     *
 *                                            *
 * For local development, edit your .env file *
 * then run 'php artisan migrate'.            *
