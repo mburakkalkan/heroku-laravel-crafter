@@ -1,6 +1,6 @@
 {
   "name": "heroku-laravel-crafter",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Automatically creates and deploys a Laravel app to Heroku with one line of command!",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
