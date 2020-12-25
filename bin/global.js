@@ -35,6 +35,8 @@ if (!auths.includes(auth)) {
     process.exit(1);
 }
 
+const laravelVersion = argv.version || "";
+
 const locale = argv.locale || 'en_US';
 
 console.log(`
@@ -50,7 +52,7 @@ To continue, press enter.`.brightYellow);
 readline.question();
 
 console.log('Creating Laravel app...'.brightCyan);
-shell.exec(`composer create-project --prefer-dist laravel/laravel ${appName}`);
+shell.exec(`composer create-project laravel/laravel ${appName} --prefer-dist ${laravelVersion}`);
 shell.cd(appName);
 
 console.log('Initializing git...'.brightCyan);
@@ -122,6 +124,12 @@ shell.exec('heroku open');
 console.log(`
 **********************************************
 * Your app is READY on Heroku!               *
+*                                            *
+* NOTE: It may take a few minutes the Heroku *
+* Redis to be ready. If you get errors when  *
+* open your app, don't worry and try again   *
+* a few minutes later.                       *
+*                                            *
 * For local development, edit your .env file *
 * then run 'php artisan migrate'.            *
 * Thank you for using Heroku Laravel Crafter *

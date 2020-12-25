@@ -19,6 +19,7 @@ It automatically creates a Laravel app, then does all the jobs required for depl
 ---
 
 :warning: **Requirements**
+* Composer
 * Latest version of Heroku CLI
 * The minimum version of PHP which the latest version of Laravel requires
 
@@ -31,7 +32,7 @@ It automatically creates a Laravel app, then does all the jobs required for depl
 
 :fire: **Usage**
 * `heroku login`
-* `heroku-laravel-create <your-app-name> --ui=vue --auth=yes --region=eu --locale=tr_TR`
+* `heroku-laravel-create <your-app-name> --ui=vue --auth=yes --region=eu --locale=tr_TR --version=8.*`
 
 
 **Switches**
@@ -42,3 +43,4 @@ It automatically creates a Laravel app, then does all the jobs required for depl
 | `locale` | Your localization code | `en_US` |
 | `ui` | Laravel UI scaffolding framework (`none`, `bootstrap`, `vue`, `react`) | `vue` |
 | `auth` | Laravel UI auth scaffolding (`yes`, `no`) | `yes` |
+| `version` | Select a specific Laravel version (`7.*`, `5.5`, `6.0`, ...) | `latest` |
